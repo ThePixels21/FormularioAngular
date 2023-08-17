@@ -1,0 +1,55 @@
+<div class="container-fluid col-12 px-5 pt-3">
+  <div class="row">
+    <div class="formulario col-6">
+      <h2>{{titulo}}</h2>
+      <div class="form-group row mb-2">
+        <label class="form-label h6" for="nombre">{{lblNombre}}</label>
+        <input [(ngModel)]="nombre" type="text" class="form-control" placeholder="Ingrese el nombre">
+      </div>
+      <div class="form-group row mb-2">
+        <label class="form-label h6" for="apellido">{{lblApellido}}</label>
+        <input [(ngModel)]="apellido" id="apellido" type="text" class="form-control" placeholder="Ingrese el apellido">
+      </div>
+      <div class="form-group row mb-2">
+        <label class="form-label h6" for="cedula">{{lblCedula}}</label>
+        <input [(ngModel)]="cedula" id="cedula" type="number" class="form-control" placeholder="Ingrese la cédula">
+      </div>
+      <div class="form-group row mb-2">
+        <label class="form-label h6" for="sexo">{{lblSexo}}</label>
+        <select [(ngModel)]="sexo" name="sexo" id="sexo" class="form-control form-select">
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="form-label h6" for="email">{{lblEmail}}</label>
+        <input [(ngModel)]="email" id="email" type="email" class="form-control" placeholder="Ingrese el email">
+      </div>
+      <button class="btn btn-primary row" (click)="mostrarDatos()">{{txtGuardar}}</button>
+    </div>
+    <div *ngIf="mostrar" class="datos col-6 pt-5 px-5">
+      <div class="row mb-5">
+        <label class="col-2 h5">{{lblNombre}}</label>
+        <label class="col h5">{{nombreGuardado}}</label>
+      </div>
+      <div class="row mb-5">
+        <label class="col-2 h5">{{lblApellido}}</label>
+        <label class="col h5">{{apellidoGuardado}}</label>
+      </div>
+      <div class="row mb-5">
+        <label class="col-2 h5">{{lblCedula}}</label>
+        <label class="col h5">{{cedulaGuardada}}</label>
+      </div>
+      <div class="row mb-5">
+        <label class="col-2 h5">{{lblSexo}}</label>
+        <label class="col h5">{{sexoGuardado}}</label>
+      </div>
+      <div class="row mb-5">
+        <label class="col-2 h5">{{lblEmail}}</label>
+        <label class="col h5">{{emailGuardado}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
